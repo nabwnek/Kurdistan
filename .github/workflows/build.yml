@@ -18,10 +18,10 @@ jobs:
       with:
         gradle-version: '8.5'
     - run: |
-        unzip Kurdistan-Keyboard-v2.zip
-        cd Kurdistan
+        unzip Kurdistan-Keyboard-v3.zip
+        cd Kurdistan2
         gradle assembleDebug
     - uses: actions/upload-artifact@v4
       with:
         name: Kurdistan-APK
-        path: Kurdistan/app/build/outputs/apk/debug/app-debug.apk
+        path: Kurdistan2/app/build/outputs/apk/debug/app-debug.apk
