@@ -13,12 +13,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - uses: android-actions/setup-android@v3
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.5'
     - run: |
-        unzip Kurdistan-Keyboard.zip
+        unzip Kurdistan-Keyboard-v2.zip
         cd Kurdistan
-        curl -L https://services.gradle.org/distributions/gradle-8.5-bin.zip -o gradle-bin.zip
-        unzip gradle-bin.zip
-        ./gradle-8.5/bin/gradle assembleDebug
+        gradle assembleDebug
     - uses: actions/upload-artifact@v4
       with:
         name: Kurdistan-APK
