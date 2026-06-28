@@ -16,7 +16,7 @@ jobs:
     - run: |
         unzip Kurdistan-Keyboard.zip
         cd Kurdistan
-        chmod +x gradlew
+        gradle wrapper
         ./gradlew assembleDebug
     - uses: actions/upload-artifact@v4
       with:
