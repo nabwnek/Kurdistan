@@ -16,8 +16,9 @@ jobs:
     - run: |
         unzip Kurdistan-Keyboard.zip
         cd Kurdistan
-        gradle wrapper
-        ./gradlew assembleDebug
+        sed -i 's/gradle-8.0/gradle-8.5/g' gradle/wrapper/gradle-wrapper.properties
+        chmod +x gradlew
+        ./gradlew assembleDebug --warning-mode none
     - uses: actions/upload-artifact@v4
       with:
         name: Kurdistan-APK
