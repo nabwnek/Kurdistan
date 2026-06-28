@@ -13,12 +13,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - uses: android-actions/setup-android@v3
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v3
-      with:
-        gradle-version: '8.5'
-    - run: |
-        unzip Kurdistan-Keyboard-v3.zip
+    - name: Build APK
+      run: |
+        unzip Kurdistan-Keyboard-v4.zip
         cd Kurdistan2
         gradle assembleDebug
     - uses: actions/upload-artifact@v4
